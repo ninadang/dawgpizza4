@@ -7,7 +7,7 @@
 body {
 	font-family: 'Pathway Gothic One', sans-serif;
 	font-size: 21px;
-	background-image: url(../img/shattered.png);
+	background-image: url(../img/ps_neutral.png);
 }
 
 .orderbtn {
@@ -22,20 +22,9 @@ body {
 	color: #FFF;
 }
 
-/*
-.orderbtn2 {
-	margin-top: 40px;
-	padding: 15px;
-	margin-left: 42%;
-	font-size: 30px;
-	color: #9A1214;
+.time {
+	color: #8243D6;
 }
-
-.orderbtn2:hover {
-	text-decoration: none;
-	background-color: #8243D6;
-	color: #FFF;
-} */
 
 .logo {
 	margin-left: 40%;
@@ -58,6 +47,12 @@ h2 {
 	margin-top: 5px;
 	margin-left: 3%;
 	text-align: center;
+}
+
+.orderDetails {
+	text-align: left;
+	margin-left: 13%;
+	width: 83%;
 }
 
 .col-md-11 {
@@ -95,7 +90,7 @@ h2 {
 /*Sizes*/
 .size {
 	text-align: center;
-}
+} */
 
 .title {
 	font-family: 'Ubuntu Condensed', sans-serif;
@@ -184,26 +179,13 @@ iframe {
 	text-align: center;
 }
 
-
-/* Fixed Footer
-.footer {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    padding: 0.5em;
-    background-color: #000;
-}
-
-.footer:hover {
-    background-color:  #8243D6;   
-    color: #FFF; 
-}
-*/
-
 /*Jobs*/
 .phrase {
 	text-align: center;
+}
+
+a {
+	cursor: pointer;
 }
 
 
@@ -242,7 +224,7 @@ iframe {
         text-align: center;
     }
 
-    button.btn.btn-danger {
+    #btn-danger {
 		margin-top: 30px;
 		margin-left: 7%;
 		font-size: 12px;

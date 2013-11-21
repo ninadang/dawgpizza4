@@ -1,12 +1,20 @@
 //File merges information from menu.js and menu.html. to
 //create a dynamic menu.
 
-$(function(){
-	//console.log("ready!");
-	pizzaRender(com.dawgpizza.menu.pizzas);
-	dRender(com.dawgpizza.menu.drinks, '.drinks', 'dr');
-	dRender(com.dawgpizza.menu.desserts, '.desserts', 'de');
-}); //on ready function
+
+if ($("title").html() == "Menu") {
+	$(function(){
+		//console.log("ready!");
+		pizzaRender(com.dawgpizza.menu.pizzas);
+		dRender(com.dawgpizza.menu.drinks, '.drinks', 'dr');
+		dRender(com.dawgpizza.menu.desserts, '.desserts', 'de');
+	}); //on ready function
+}
+if ($("title").html() == "Order") {
+	$(function() {
+		renderPizzaOrder(com.dawgpizza.menu.pizzas);
+	});
+}
 
 
 
@@ -44,4 +52,18 @@ function dRender(entries, type, suffix){
 	
 }
 
-
+function renderPizzaOrder(entries) {
+	var instance;
+	var template = $('.pizza');
+	var food = $('.food');
+	$.each(entries, function(){
+	    instance = template.clone();
+	   	instance.find('.name').html(this.name);
+	    instance.find('.desc').html(this.description);
+	    instance.find('.pizza-s').html('<a class="order" id="' + this.name + '=s">' + this.prices[0] + '</a>');
+		instance.find('.pizza-m').html('<a class="order" id="' + this.name + '=m">' + this.prices[1] + '</a>');
+		instance.find('.pizza-l').html('<a class="order" id="' + this.name + '=l">' + this.prices[2] + '</a>');	    
+	    instance.removeClass('template');
+        food.append(instance);
+	});
+}
