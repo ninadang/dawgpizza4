@@ -85,6 +85,11 @@ function renderDOrder(entries, type, suffix){
 	    instance = template.clone();
 	   	instance.find('.name-' + suffix).html(this.name);
 	    instance.find('.price-' + suffix).html('<a class="order" id="' + this.name + '=' + suffix + '">' + this.price + '</a>');
+	    
+	    instance.find('a').attr('data-name', this.name);
+	    instance.find('a').attr('data-type', this.type);
+	    instance.find("a").attr('data-price', this.price);
+
 	    instance.removeClass('template');
         food.append(instance);
 

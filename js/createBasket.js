@@ -105,10 +105,10 @@ $(function() {
 
     $(".order").click(function(event) {
         var newCartItem = {
-            type: this.getAttribute('pizza.type'),
-            name: this.getAttribute('pizza.name'),
-            size: this.getAttribute('pizza.size'),
-            price: this.getAttribute('pizza.price')
+            type: this.getAttribute('data-type'),
+            name: this.getAttribute('data-name'),
+            size: this.getAttribute('data-size'),
+            price: this.getAttribute('data-price')
         };
         cart.items.push(newCartItem);
 
@@ -151,12 +151,11 @@ $(function() {
     });
 
     $('#place-order').click(function(){
-        var form =  $(this);
-        
-        cart.name = form.find('input[name="fl-name"]').val();
-        cart.address1 = form.find('input[name="addr-1"]').val();
-        cart.zip = form.find('input[name="zip"]').val();
-        cart.phone = form.find('input[name="phone"]').val();
+        var form =  $('.cart-form');
+        cart.name = form.find('#fl-name').val();
+        cart.address1 = form.find('#addr-1').val();
+        cart.zip = form.find('#zip').val();
+        cart.phone = form.find('#phone').val();
         
         postCart(cart, $('#the-master-form'));
         
