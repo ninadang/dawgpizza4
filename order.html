@@ -17,7 +17,8 @@
 
 				<div class="row">
 				    <div class="col-md-4">
-				        <a class="address" href="https://maps.google.com/maps?q=4306+University+Way+NE,+Seattle,+WA+98105)&amp;hnear=4306+University+Way+NE,+Seattle,+Washington+98105&amp;gl=us&amp;t=h&amp;z=16"> 4306 University Way<br>NE Seattle, WA 98105</a>
+				        <a class="address" href="https://maps.google.com/maps?q=4306+University+Way+NE,+Seattle,+WA+98105)&amp;hnear=4306+University+Way+NE,+Seattle,+Washington+98105&amp;gl=us&amp;t=h&amp;z=16"> 4306 University Way </a><br>
+				        <a class="address">NE Seattle, WA 98105</a>
 				    </div>
 				    <div class="col-md-4">
 				    	<a class="orderbtn" href="order.html">PLACE AN ORDER</a><br>
@@ -85,19 +86,68 @@
 				<div class="row">
 					<h2>Shopping Cart</h2>
 					<div id="cart-container"></div>
+				
+				<div class="row" id="total-row">
+					<div class="col-xs-10"> Subtotal: </div>
+					<div class="col-xs-2">$<span id="sub-price"></span></div>
 				</div>
 				<div class="row" id="total-row">
-					<div class="col-xs-10"> Total (+9.5% tax): </div>
+					<div class="col-xs-10"> Tax (9.5%): </div>
+					<div class="col-xs-2">$<span id="tax-price"></span></div>
+				</div>
+				<div class="row" id="total-row">
+					<div class="col-xs-10"> Total: </div>
 					<div class="col-xs-2">$<span id="total-price"></span></div>
 				</div>
-				<div class="row">
-					<div class="col-xs-12" id="button-row">
-						<button class="btn btn-danger" id="place-order" type="button">Place Order</button>
-					</div>
+				<div>
+				<button class="btn btn-primary" id="empty" type="submit">Empty Basket</button>
+				
+				<div class="cart-form">
+					<form id="the-master-form" method="POST" action="http://dawgpizza.com/orders/" class="form-horizontal signup-form" role="form">
+						<input type="hidden" name="cart">
+						
+						<!--Name-->
+		                <div class="form-group">
+		                    <label class="col-lg-2 control-label" for="fl-name">Name</label>
+		                    <div class="col-lg-5">
+		                        <input type="text" class="form-control" name="fl-name" id="fl-name" placeholder="name" required>
+		                    </div>
+		                </div> 
+
+		                <!--Address-->
+		                <div class="form-group">
+		                    <label class="col-lg-2 control-label" for="addr-1">Address</label>
+		                    <div class="col-lg-10">
+		                        <input type="text" class="form-control" name="addr-1" id="addr-1" placeholder="street address" required>
+		                        <input type="text" class="form-control" name="addr-2">
+		                        <input type="text" class="form-control" name="addr-3">
+		                    </div>
+		                </div>
+
+		               	<!--Zip Code-->
+		                <div class="form-group">
+		                    <label class="col-lg-2 control-label" for="zip">Zip</label>
+		                    <div class="col-lg-10">
+		                        <input type="text" class="form-control" name="zip" id="zip" placeholder="zip code" required>
+		                    </div>
+		                </div>
+						
+						<!--Phone-->
+		                <div class="form-group">
+		                    <label class="col-lg-2 control-label" for="phone">Phone</label>
+		                    <div class="col-lg-10">
+		                        <input type="tel" class="form-control" name="phone" id="phone" placeholder="primary phone number" required>
+		                    </div>
+		                </div>
+
+		                <div class="row">
+							<div class="col-xs-12" id="button-row">
+								<button class="btn btn-danger" id="place-order" type="submit">Place Order</button>
+							</div>
+						</div>
+					</form>
 				</div>
-			</div>
-			
-		
+			</div> <!--cart column-->		
 	</div> 
 	</div>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>

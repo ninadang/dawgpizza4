@@ -42,10 +42,13 @@ h2 {
 	font-family: 'Ubuntu Condensed', sans-serif;
 }
 
+.cart-form {
+	margin-top: 30px;
+}
+
 /*Top row and menu formatting*/
 .row {
 	margin-top: 5px;
-	margin-left: 3%;
 	text-align: center;
 }
 
@@ -61,9 +64,14 @@ h2 {
 	width: 83%;
 }
 
+.col-md-6 {
+	margin-left: 7%;
+}
+
 /*Street Address*/
 .address {
 	color: #8243D6;
+	margin-left: 25%;
 }
 
 /*Street Address Hover Effect*/
@@ -159,11 +167,19 @@ h2 {
 }
 
 /*YouTube Dropdown Button*/
-button.btn.btn-danger {
+button.btn.btn-danger, button.btn.btn-primary, button.btn.btn-success {
 	margin-top: 30px;
-	margin-left: 43%;
-	font-size: 17px;
+	margin-left: 50%;
+	font-size: 14px;
 	font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+#cart-container {
+	text-align: left;
+}
+
+#total-row {
+	text-align: left;
 }
 
 iframe {
